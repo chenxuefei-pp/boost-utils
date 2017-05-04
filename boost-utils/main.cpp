@@ -8,9 +8,12 @@
 //  描述: 主函数测试
 // **************************************************************************/
 
-#include "logger/easy_logger.hxx"
+#include "logger/logger.hxx"
+#include <iostream>
 
 int main(int argc , char** args)
 {
-    EZ_LOG_DEBUG("Hello ", "World");
+    logger::init_logger("./log", "boost-utils", static_cast<uint32_t>(loglevel::Log_Info));
+    
+    LOG_DEBUG_F("The value is %s %d %x %f","Hello world",12,12,0.5f);
 }

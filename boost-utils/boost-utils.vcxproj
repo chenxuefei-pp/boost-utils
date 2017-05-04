@@ -150,9 +150,11 @@
   <ItemGroup>
     <ClInclude Include="forever_timer.hxx" />
     <ClInclude Include="logger\easy_logger.hxx" />
+    <ClInclude Include="logger\logger.hxx" />
     <ClInclude Include="types.hxx" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="logger\logger.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

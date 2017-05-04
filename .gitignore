@@ -1,3 +1,6 @@
 *.opendb
 *.db
 /.vs
+Debug/boost-utils.exe
+Debug/boost-utils.ilk
+Debug/boost-utils.pdb
