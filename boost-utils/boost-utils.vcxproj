@@ -149,6 +149,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="forever_timer.hxx" />
+    <ClInclude Include="logger\easy_logger.hxx" />
     <ClInclude Include="types.hxx" />
   </ItemGroup>
   <ItemGroup>

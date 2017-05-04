@@ -21,6 +21,9 @@
     <ClInclude Include="types.hxx">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="logger\easy_logger.hxx">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">

@@ -8,39 +8,9 @@
 //  描述: 主函数测试
 // **************************************************************************/
 
-
-#include "forever_timer.hxx"
-#include <boost/thread.hpp>
-
-void    timer_func(uint sec)
-{
-    std::cout << "Current " << sec << std::endl;
-}
-
-void    io_run(boost::asio::io_service &service)
-{
-    ERRCODE ec;
-    boost::asio::io_service::work work(service);
-    service.run(ec);
-    std::cout << ec << std::endl;
-}
-
+#include "logger/easy_logger.hxx"
 
 int main(int argc , char** args)
 {
-    boost::asio::io_service service;
-    boost::thread(io_run, boost::ref(service)).detach();
-    
-    forever_timer timer(service);
-
-    timer.add_doing(5, boost::bind(timer_func, 5));
-    boost::this_thread::sleep(boost::posix_time::seconds(8));
-    timer.del_doing(5);
-
-    boost::this_thread::sleep(boost::posix_time::seconds(4));
-
-    timer.add_doing(3, boost::bind(timer_func, 3));
-    timer.add_doing(3, boost::bind(timer_func, 3));
-
-    boost::this_thread::sleep(boost::posix_time::seconds(100));
+    EZ_LOG_DEBUG("Hello ", "World");
 }
