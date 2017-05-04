@@ -181,29 +181,29 @@ protected:
  * \brief 格式化日志信息等级宏
  * \param Message
  */
-#define         LOG_INFO_F(fmt ,...)       LOG_FORMAT(fmt,Log_Info,__VA_ARGS__)
+#define         LOG_INFO_F(fmt,...)       LOG_FORMAT(fmt,Log_Info,__VA_ARGS__)
  /**
  * \brief 格式化日志提示等级宏
  * \param Message
  */
-#define         LOG_NOTICE_F(fmt ,...)     LOG_FORMAT(fmt,Log_Notice,__VA_ARGS__)
+#define         LOG_NOTICE_F(fmt,...)     LOG_FORMAT(fmt,Log_Notice,__VA_ARGS__)
  /**
  * \brief 格式化日志调试等级宏
  * \param Message
  */
-#define         LOG_DEBUG_F(fmt ,...)      LOG_FORMAT(fmt,Log_Debug,__VA_ARGS__)
+#define         LOG_DEBUG_F(fmt,...)      LOG_FORMAT(fmt,Log_Debug,__VA_ARGS__)
  /**
  * \brief 格式化日志警告等级宏
  * \param Message
  */
-#define         LOG_WARNING_F(fmt ,...)    LOG_FORMAT(fmt,Log_Warning,__VA_ARGS__)
+#define         LOG_WARNING_F(fmt,...)    LOG_FORMAT(fmt,Log_Warning,__VA_ARGS__)
  /**
  * \brief 格式化日志错误等级宏
  * \param Message
  */
-#define         LOG_ERROR_F(fmt ,...)      LOG_FORMAT(fmt,Log_Error,__VA_ARGS__)
+#define         LOG_ERROR_F(fmt,...)      LOG_FORMAT(fmt,Log_Error,__VA_ARGS__)
  /**
  * \brief 格式化日志崩溃等级宏
  * \param Message
  */
-#define         LOG_FATAL_F(fmt ,...)      LOG_FORMAT(fmt,Log_Fatal,__VA_ARGS__)
+#define         LOG_FATAL_F(fmt,...)      LOG_FORMAT(fmt,Log_Fatal,__VA_ARGS__)
