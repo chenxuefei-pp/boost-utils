@@ -10,10 +10,17 @@
 
 #include "logger/logger.hxx"
 #include <iostream>
+#include "ustring.hxx"
 
 int main(int argc , char** args)
 {
     logger::init_logger("./log", "boost-utils", static_cast<uint32_t>(loglevel::Log_Info));
     
-    LOG_DEBUG_F("The value is %s %d %x %f","Hello world",12,12,0.5f);
+    std::vector<uchar> v{ 0x12,0x58,0x88 };
+    std::list<uchar> v1{ 0x12,0x58,0x88 ,0x12,0x58,0x88 };
+    ustring data(v1);
+    ustring ddd(std::move(data));
+
+    std::cout << ddd.to_hexstring(" ") << std::endl;
+    std::cout << data.to_hexstring(" ") << std::endl;
 }

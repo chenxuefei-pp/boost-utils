@@ -152,6 +152,7 @@
     <ClInclude Include="logger\easy_logger.hxx" />
     <ClInclude Include="logger\logger.hxx" />
     <ClInclude Include="types.hxx" />
+    <ClInclude Include="ustring.hxx" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="logger\logger.cpp" />
