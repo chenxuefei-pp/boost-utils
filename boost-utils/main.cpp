@@ -11,16 +11,28 @@
 #include "logger/logger.hxx"
 #include <iostream>
 #include "ustring.hxx"
+#include <boost/timer.hpp>
+#include <boost/log/attributes/current_thread_id.hpp>
+#include <boost/thread/v2/thread.hpp>
 
 int main(int argc , char** args)
 {
-    logger::init_logger("./log", "boost-utils", static_cast<uint32_t>(loglevel::Log_Info));
     
-    std::vector<uchar> v{ 0x12,0x58,0x88 };
-    std::list<uchar> v1{ 0x12,0x58,0x88 ,0x12,0x58,0x88 };
-    ustring data(v1);
-    ustring ddd(std::move(data));
+    logger::init_logger("./log", "boost-utils", static_cast<uint32_t>(loglevel::Log_Info));
+    uchar buf[256] = { 1 };
+    uchar dest[256] = { 0 };
+    ustring ubuf(256,1);
 
-    std::cout << ddd.to_hexstring(" ") << std::endl;
-    std::cout << data.to_hexstring(" ") << std::endl;
+    boost::timer timer;
+    {
+        memcpy(dest, buf, 256);   
+        LOG_DEBUG_F("memcpy() time : %f", timer.elapsed());
+    }
+    timer.restart();
+    
+    ustring data(ubuf);
+    LOG_DEBUG_F("copy() time : %f", timer.elapsed());
+    
+    boost::this_thread::sleep(boost::posix_time::seconds(10000));
+
 }

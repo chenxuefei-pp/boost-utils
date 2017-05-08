@@ -92,11 +92,22 @@ public:
      * \return 格式化好的字符串
      */
     template<typename ...Params>
-    static  std::string  format(const std::string &fmt , Params... params) 
+    static  std::string  format(const std::string &fmt , Params... params)
     {
         auto formatter = boost::format(fmt);
         return std::move(_log_format(formatter, params...).str());
     }
+
+    /**
+     * \brief 无参数重载
+     * \param fmt 无参数消息
+     * \return 格式化好的字符串
+     */
+    static  std::string format(const std::string &fmt)
+    {
+        return std::move(fmt);
+    }
+
 
     /**
      * \brief logger实例类型
